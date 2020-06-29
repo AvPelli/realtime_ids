@@ -5,6 +5,7 @@ De python file "ML_modellen" bevat alle code voor de verschillende modellen op t
 # 2. realtime cluster
 
 Voor de cluster is volgende software nodig:
+
 | Dependency | version  |   
 | ------- | --- |
 | Apache Kafka | 2.5.0 |
