@@ -12,9 +12,11 @@ Voor de cluster is volgende software nodig:
 | Apache Storm | 2.1.0 |
 | Java  | 8 |
 
+De cluster start niet op met nieuwere java versies, het is dus belangrijk om te verifiëren of versie 8 gebruikt wordt.
+
 De map /storm_cluster bevat het eclipse project met de source code. Om de cluster op te starten moet de code gecompileerd worden tot een jar file.
 
-Om de cluster lokaal te runnen, moeten enkele zaken eerst opgestart worden (in verschillende consoles):
+Om de cluster lokaal te runnen, moeten enkele zaken eerst opgestart worden (in verschillende consoles), er wordt hier verondersteld dat de storm folder tot het pad toegevoegd is:
 ```
 zookeeper-server-start .../zookeeper.properties
 storm nimbus (in console met admin rechten)
@@ -22,11 +24,11 @@ storm supervisor (in console met admin rechten)
 storm ui
 ```
 
-Daarna kan de topologie opgestart worden in een nieuwe console:
+Daarna kan de topologie opgestart worden in een nieuwe console, vervang "cluster_jar_name" door de naam van de gecompileerde jar:
 
 ```
 cd .../storm_cluster (project pad)
-storm jar cluster_jar_name.jar org.apache.storm.flux.Flux --local topology.yaml
+storm jar target/cluster_jar_name.jar org.apache.storm.flux.Flux --local topology.yaml
 ```
 
 De statistieken van de cluster kunnen geraadpleegd worden in de browser op localhost:8080
