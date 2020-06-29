@@ -1,0 +1,28 @@
+name: "network_IDS"
+config:
+  topology.workers: 1
+  
+spouts:
+  - id: "networkspout"
+    className: "org.apache.storm.flux.wrappers.spouts.FluxShellSpout"
+    constructorArgs:
+      # Pas onderstaande pad aan (absoluut pad)
+      - ["python", "C:/Users/Arthu/Desktop/thesis_realtime_ids/deel_2_streamprocessing/storm_cluster/multilang/resources/spoutPython.py"]
+      - ["networkinfo"]
+    parallelism: 1
+
+bolts:
+  - id: "ids"
+    className: "org.apache.storm.flux.wrappers.bolts.FluxShellBolt"
+    constructorArgs:
+      # Pas onderstaande pad aan (absoluut pad)
+      - ["python", "C:/Users/Arthu/Desktop/thesis_realtime_ids/deel_2_streamprocessing/storm_cluster/multilang/resources/boltPython.py"]
+      - ["networkinfo"]
+    parallelism: 3
+
+streams:
+  - name: "network"
+    from: "networkspout"
+    to: "ids"
+    grouping:
+      type: SHUFFLE
