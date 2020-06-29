@@ -1,6 +1,6 @@
 # 1. machine learning
 
-De python file "ML_modellen" bevat alle code voor de verschillende modellen op te stellen.
+De python file "ML_modellen" bevat alle code voor de verschillende modellen op te stellen. De dependencies hiervoor zijn opgelijst in requirements.txt
 
 # 2. realtime cluster
 
