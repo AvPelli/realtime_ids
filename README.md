@@ -1,3 +1,16 @@
+# Algemeen
+
+De modellen worden steeds opgezet door de cse-cic-ids2018 dataset te gebruiken, deze csv files staan er niet bij doordat ze te groot zijn om op github up te loaden. 
+
+De python files die deze csv bestanden gebruiken zijn:
+
+* ML_modellen.py 
+* storm_cluster/multilang/resources/spoutPython.py
+* storm_cluster/multilang/resources/boltPython.py
+
+In deze files zal men de paden naar deze csv files moeten aanpassen.
+
+
 # 1. machine learning
 
 De python file "ML_modellen" bevat alle code voor de verschillende modellen op te stellen. De dependencies hiervoor zijn opgelijst in requirements.txt
