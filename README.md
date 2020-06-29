@@ -48,7 +48,7 @@ De logs zijn te vinden in .../apache-storm-2.1.0/logs
 
 ## Implementatie & configuratie topologie
 
-Er is geen enkele lijn java code geschreven, de code voor de spouts en bolts zijn te vinden in multilang/resources folder. 
+Er is geen enkele lijn java code geschreven, de code voor de spouts en bolts zijn te vinden in storm_cluster/multilang/resources folder. 
 Indien men de topologie wil veranderen moet men enkel topology.yml aanpassen. 
 
 
