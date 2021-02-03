@@ -2,6 +2,9 @@
 
 ## Introduction
 
+In today's networking landscape, parties rely on internal networks to exchange confidential information. Searching efficient and effective ways to protect data over the network is subject to intense research focus. One way to detect suspicious activity is using a network intrusion detection system (NIDS). This system needs to be reliable in the face of (un)known attacks. Furthermore, intrusions are ideally detected sooner rather than later to mitigate potential damage. In search to satisfy these conditions, this thesis investigated the use of several machine learning models on the novel cse-cic-ids2018 dataset, as well as the incorporation of one of those models in a stream processing system using the Apache Storm framework.
+
+
 ## General
 
 The models are trained by using the cse-cic-ids2018 dataset, these csv files are not included in this repository because of their size (Gigabytes).
@@ -15,11 +18,7 @@ These csv files are used in the following python files:
 In these files the paths to the csv files have to be adjusted based on their location.
 
 
-# 1. machine learning
-
 The python file "ML_modellen" contains all code for the various machine learning models. The dependencies are listed in requirements.txt
-
-# 2. realtime cluster
 
 ## Dependencies
 
