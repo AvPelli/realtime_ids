@@ -2,8 +2,7 @@
 
 ## Introduction
 
-In today's networking landscape, parties rely on internal networks to exchange confidential information. Searching efficient and effective ways to protect data over the network is subject to intense research focus. 
-One way to detect suspicious activity is using a network intrusion detection system (NIDS). This system needs to be reliable in the face of (un)known attacks. Furthermore, intrusions are ideally detected sooner rather than later to mitigate potential damage. 
+In today's networking landscape, parties rely on internal networks to exchange confidential information. Searching efficient and effective ways to protect data over the network is subject to intense research focus. One way to detect suspicious activity is using a network intrusion detection system (NIDS). This system needs to be reliable in the face of (un)known attacks. <\br> Furthermore, intrusions are ideally detected sooner rather than later to mitigate potential damage. 
 In search to satisfy these conditions, this thesis investigated the use of several machine learning models on the novel cse-cic-ids2018 dataset, as well as the incorporation of one of those models in a stream processing system using the Apache Storm framework.
 
 
