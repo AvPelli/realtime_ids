@@ -1,4 +1,8 @@
-# General
+# Master's thesis 2020
+
+## Introduction
+
+## General
 
 The models are trained by using the cse-cic-ids2018 dataset, these csv files are not included in this repository because of their size (Gigabytes).
 
