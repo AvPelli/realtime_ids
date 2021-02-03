@@ -1,25 +1,25 @@
-# Algemeen
+# General
 
-De modellen worden steeds opgezet door de cse-cic-ids2018 dataset te gebruiken, deze csv files staan er niet bij doordat ze te groot zijn om op github up te loaden. 
+The models are trained by using the cse-cic-ids2018 dataset, these csv files are not included in this repository because of their size (Gigabytes).
 
-De python files die deze csv bestanden gebruiken zijn:
+These csv files are used in the following python files:
 
 * ML_modellen.py 
 * storm_cluster/multilang/resources/spoutPython.py
 * storm_cluster/multilang/resources/boltPython.py
 
-In deze files zal men de paden naar deze csv files moeten aanpassen.
+In these files the paths to the csv files have to be adjusted based on their location.
 
 
 # 1. machine learning
 
-De python file "ML_modellen" bevat alle code voor de verschillende modellen op te stellen. De dependencies hiervoor zijn opgelijst in requirements.txt
+The python file "ML_modellen" contains all code for the various machine learning models. The dependencies are listed in requirements.txt
 
 # 2. realtime cluster
 
 ## Dependencies
 
-Voor de cluster is volgende software nodig:
+The cluster uses the following software:
 
 | Dependency | version  |   
 | ------- | --- |
@@ -27,20 +27,20 @@ Voor de cluster is volgende software nodig:
 | [Apache Storm](https://storm.apache.org/2019/10/31/storm210-released.html) | 2.1.0 |
 | [Java](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)  | 8 |
 
-De cluster start niet op met nieuwere java versies, het is dus belangrijk om te verifiëren of versie 8 gebruikt wordt.
+The cluster does not work with newer java versions, its important to verify if java jdk 8 is used.
 
 ## Apache storm 
 
-Na installatie van [Apache Storm](https://storm.apache.org/2019/10/31/storm210-released.html)  vindt men de configuratie van het framework zelf in .../apache-storm-2.1.0/conf, daar vindt men in defaults.yml de standaard waarden voor alle mogelijke instellingen. 
+After installation of [Apache Storm](https://storm.apache.org/2019/10/31/storm210-released.html) the framework's configuration resides in .../apache-storm-2.1.0/conf, the standard settings for all possible settings are located in defaults.yml. 
 
-In diezelfde map zit storm.yaml, daar moet men de locatie van de nimbus opgeven (localhost) en kan men de instellingen vanuit default.yml overschrijven. De instellingen die gebruikt zijn tijdens de thesis kunt u vinden in storm.yaml hierboven in de github repository.
+The same directory contains storm.yaml, where the location of nimbus (localhost) has to be specified. The default settings from default.yml can be overridden in this file. The settings used for this thesis are to be found in the storm.yaml file in this github repository. 
 
 
 ## Cluster
 
-De map /storm_cluster bevat het eclipse project met de source code. Om de cluster op te starten moet de code gecompileerd worden tot een jar file.
+The /storm_cluster directory contains the eclipse project with source code. To start the cluster, the code has to be compiled to a jar file. 
 
-Om de cluster lokaal te runnen, moeten enkele zaken eerst opgestart worden (in verschillende consoles), er wordt hier verondersteld dat de storm folder tot het pad toegevoegd is:
+The following commands are used in this order to run the cluster locally:
 ```
 zookeeper-server-start .../zookeeper.properties
 storm nimbus (in console met admin rechten)
@@ -48,21 +48,21 @@ storm supervisor (in console met admin rechten)
 storm ui
 ```
 
-Daarna kan de topologie opgestart worden in een nieuwe console, vervang "cluster_jar_name" door de naam van de gecompileerde jar:
+When this is done, the topology can be run in a new console by using the following command. Replace <cluster_jar_name> with the name of the compiled jar:
 
 ```
 cd {project pad}/storm_cluster 
-storm jar target/cluster_jar_name.jar org.apache.storm.flux.Flux --local topology.yaml
+storm jar target/<cluster_jar_name>.jar org.apache.storm.flux.Flux --local topology.yaml
 ```
 
-De statistieken van de cluster kunnen geraadpleegd worden in de browser op localhost:8080
+The statistics of the cluster are obtained on the storm UI at localhost:8080
 
-De logs zijn te vinden in .../apache-storm-2.1.0/logs
+The logs are available in .../apache-storm-2.1.0/logs
 
-## Implementatie & configuratie topologie
+## Implementation & configuration of the topology
 
-Er is geen enkele lijn java code geschreven, de code voor de spouts en bolts zijn te vinden in storm_cluster/multilang/resources folder. 
-Indien men de topologie wil veranderen moet men enkel topology.yml aanpassen. 
+The code of the spout and bolt components resides in the storm_cluster/multilang/resources directory. 
+The topology of the stream processing network can be changed in the topology.yml file. 
 
 
 
